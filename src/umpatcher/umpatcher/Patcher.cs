@@ -76,7 +76,9 @@ namespace UnityMonoDllSourceCodePatcher {
 
 			var gitignore = Path.Combine(dnSpyVersionPath, "mono", "cil", ".gitignore");
 			if (!TextFilePatcher.RemoveLines(gitignore, line => line.Text == "/opcode.def"))
-				throw new ProgramException("Couldn't remove /opcode.def from .gitignore");
+				// throw new ProgramException("Couldn't remove /opcode.def from .gitignore");
+				Log($"Couldn't remove /opcode.def from .gitignore");
+			
 
 			Log($"Committing copied files");
 			dnSpyRepo.CommitAllFiles($"Add Unity files ({Path.GetFileName(dnSpyVersionPath)}), commit hash {unityGitHash}");
