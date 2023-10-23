@@ -11,3 +11,4 @@ obj/
 *.suo
 *.user
 *.tmp_proj
+.idea/
